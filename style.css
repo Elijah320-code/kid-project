@@ -1,0 +1,119 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Use a more playful font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ece983;
+    background-image: url('background-image-url'); /* Optional: add a fun background image */
+    background-size: cover;
+}
+
+#gameContainer {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background to ensure readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for a lifted effect */
+}
+
+#animals, #names {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Ensure it looks good on smaller screens */
+    margin: 20px;
+}
+
+.animal, .name {
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 10px; /* More rounded corners */
+    cursor: grab;
+    transition: transform 0.2s ease; /* Smooth scaling transition */
+}
+
+.animal {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px; /* Ensure spacing between items */
+}
+
+.name {
+    background-color: #fafad2;
+    color: #333; /* Darker text for better readability */
+    font-weight: bold;
+    margin: 10px; /* Ensure spacing between items */
+}
+
+.name:hover, .animal:hover {
+    transform: scale(1.1); /* Grow items on hover for a fun effect */
+}
+
+.correct {
+    border-color: green;
+    animation: correctMatch 0.5s ease-out; /* Celebratory animation on correct match */
+}
+
+@keyframes correctMatch {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Additional fun animations */
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+.name {
+    display: inline-block;
+    animation: wiggle 0.5s ease infinite; /* Wiggle animation for names */
+}
+body, button, input, textarea {
+    font-family: 'Baloo 2', cursive;
+}
+#messageArea {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Baloo 2', cursive; /* Apply the Google Font here as well */
+}
+#playAgain {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #bdd69f;
+    background-color: #4CAF50; /* A cheerful, green color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Baloo 2', cursive; /* Use the playful Google Font */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#playAgain:hover {
+    background-color: #45a049; /* Darker shade on hover for interactive feedback */
+}
